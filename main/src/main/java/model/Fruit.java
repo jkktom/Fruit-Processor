@@ -1,20 +1,20 @@
 package model;
 
-import service.Cuttable;
-import service.Peelable;
-
-public class Fruit
-    implements Cuttable, Peelable {
-
+public class Fruit {
     private String name;
     private String color;
     private int ripeness;
     private double price;
 
-    public Fruit(String name, String color, int ripeness, double price) {
+    public Fruit(String name, int ripeness, double price) {
+        this.name = name;
+        this.ripeness = ripeness;
+        this.price = price;
+    }
+
+    public Fruit(String name, String color, double price) {
         this.name = name;
         this.color = color;
-        this.ripeness = ripeness;
         this.price = price;
     }
 
@@ -48,16 +48,5 @@ public class Fruit
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-
-    @Override
-    public String cut() {
-        return "";
-    }
-
-    @Override
-    public String peel() {
-        return "";
     }
 }
